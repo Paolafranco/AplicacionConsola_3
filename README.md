@@ -69,5 +69,3 @@ Puedes encontrar mucho más información en las siguientes páginas:
    ![alt text](https://dc722jrlp2zu8.cloudfront.net/media/cache/15/c2/15c206d27bfc509fa1c3f938efbaa374.jpg)
                          
 
-### AUTOR: ✒️
-     Paola Franco
