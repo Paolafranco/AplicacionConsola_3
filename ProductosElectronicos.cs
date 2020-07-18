@@ -4,22 +4,20 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class ProductosElectronicos : Mercancia
+    public  class ProductosElectronicos : Mercancia
     {
-    
-    //Herencia
-    public ProductosElectronicos() : base()
+        public virtual string Nombre { get; set; }
+        //Herencia
+        public ProductosElectronicos() : base()
     {
         
     }
-    public string Nombre { get; set; }
-
         //Metodos
-        public string Encendido()
+        public virtual string Encendido()
         {
             return $"Encendida";
         }
-        public string Apagado()
+        public virtual string Apagado()
         {
             return $"Apagado";
         }

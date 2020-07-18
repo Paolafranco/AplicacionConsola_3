@@ -12,8 +12,8 @@ namespace AplicacionDeber
             
             Cliente vendedor = new Cliente
             {
-                Nombre = "Paola",
-                Apellido = "Franco"
+                NombreCli2 = "Paola",
+                ApellidoCli2 = "Franco"
 
             };
             //1ra Forma Comprador-Cliente
@@ -112,27 +112,43 @@ namespace AplicacionDeber
 
             //Consola
             Console.WriteLine(vendedor.Saludar(comprador));
-            Console.WriteLine("Ingresa tu nombre y apellido: ");
+            Console.WriteLine("Ingresa tu Nombre?");
+            Console.WriteLine(Cliente.Nombre);
+            Console.WriteLine("Ingresa tu Apellido?");
+            Console.WriteLine(Cliente.Apellido);
+            Console.WriteLine(Cliente.Nombre +", Ingresa tu número de cédula");
             Console.ReadLine();
             Console.WriteLine(vendedor.OfrecerProductos(comprador));
 
-            Console.WriteLine("Gracias, tu compra es: ");
-            string cliente = vendedor.Nombre;
-            string pedir = comprador.Pedir(cliente, Electronicos);
+            string pedir = comprador.Pedir(Cliente.Nombre, Electronicos);
             Console.WriteLine(pedir);
+            Console.WriteLine("OK, ya le indico los productos, por favor de click para continuar");
+            Console.ReadLine();
 
             string cell = celular.Prender();
-            Console.WriteLine($"{comprador.Nombre} {cell}");
             Console.WriteLine(celular.Prender());
+            Console.WriteLine("Cuando acabe de revisarle por favor apague el celular");
             Console.WriteLine(celular.Apagar());
-
-            Console.WriteLine(comprador.IndicarCelL());
-            Console.WriteLine(comprador.IndicarTablet());
+            Console.ReadLine();
+            string compu = computadora.Prender();
+            Console.WriteLine(computadora.Prender());
+            Console.WriteLine("Cuando acabe de revisarle por favor apague la computadora");
+            Console.WriteLine(computadora.Apagar());
+            Console.ReadLine();
+            string tablets = tablet.Prender();
+            Console.WriteLine(tablet.Prender());
+            Console.WriteLine("Cuando acabe de revisarle por favor apague la Tablet");
+            Console.WriteLine(tablet.Apagar());
+            Console.ReadLine();
+            Console.WriteLine("Se lo dejaremos en caja para que continue el pago");
+            Console.ReadLine();
+            Console.WriteLine("Aquí estan los productos que dejo anteriormente:");
             Console.WriteLine(comprador.IndicarParlantes());
             Console.WriteLine(comprador.IndicarImpresora());
             Console.WriteLine(comprador.IndicarCamaras());
             Console.WriteLine(comprador.IndicarAudifonos());
-
+            Console.WriteLine("El precio de los 7 productos  es de 3.000");
+            Console.WriteLine("Cancele el valor total en caja y gracias por su compra");
             Console.ReadKey();
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class Mouse : GeneradorProductosTecnologicos
+    public sealed class Mouse : GeneradorProductosTecnologicos
     {
         public string Modelo { get; set; }
         public string Marca { get; set; }
@@ -19,16 +19,17 @@ namespace AplicacionDeber
         {
             return "Gracias Paola, por su compra";
         }
-        public string MoverDerecho()
+        public string MoverIzquierdo(int nombre)
         {
             return "";
         }
 
-        public string Subir()
+
+        public static string Subir()
         {
             return "Tu compra se ha guardado exitosamente";
         }
-        public string Bajar()
+        public static string Bajar()
         {
             return "";
         }

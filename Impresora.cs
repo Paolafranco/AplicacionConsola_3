@@ -4,40 +4,46 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class Impresora : GeneradorProductosTecnologicos
+    public sealed class Impresora : GeneradorProductosTecnologicos
     {
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public float Precio { get; set; }
-
+        public object NombreProducto { get; private set; }
 
         public Impresora() : base()
         {
         }
-        public new string Prender()
+        public override string Prender()
         {
-            return $"La impresora {Id} {Marca} {Modelo} {base.Prender()}";
-
+            return $"{base.Prender()} {this.NombreProducto}{this.Modelo}{this.Marca}{base.Prender()}";
         }
-        public string Imprimir()
+        public static string Prender(string nombre)
+        {
+            return $"Los audifonos estan prendidos {nombre}";
+        }
+        public static string Imprimir()
         {
             return "";
         }
 
-        public string Escanear()
+        public static string Escanear()
         {
             return "";
         }
 
-        public string Copiar()
+        public static string Copiar()
         {
             return "";
         }
-        
-        public new string Apagar()
-        {
-            return $"La impresora {Id} {Marca} {Modelo} {base.Apagar()}";
 
+        public override string Apagar()
+        {
+            return $"{base.Apagar()} {this.NombreProducto}{this.Modelo}{this.Marca}{base.Apagar()}";
+        }
+        public static string Apagar(string nombre)
+        {
+            return $"Los audifonos estan apagados {nombre}";
         }
     }
 }

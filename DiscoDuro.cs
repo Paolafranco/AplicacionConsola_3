@@ -8,7 +8,8 @@ namespace AplicacionDeber
     public class DiscoDuro : GeneradorProductosTecnologicos
     {
         public string Modelo { get; set; }
-        public string Memoria { get; set; }
+        public virtual string Memoria { get; set; }
+        public virtual string Color { get; set; }
         public string Marca { get; set; }
         public float Precio { get; set; }
 

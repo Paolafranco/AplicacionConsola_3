@@ -6,8 +6,13 @@ namespace AplicacionDeber
 {
     public class Cliente : GeneradorProductosTecnologicos
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public static string Nombre { get; set; }
+        public static string Apellido { get; set; }
+
+
+        public string NombreCli2 { get; set; }
+        public string ApellidoCli2 { get; set; }
+
 
         public Cliente() : base()
         {
@@ -126,51 +131,36 @@ namespace AplicacionDeber
         //Metodos
         public string Saludar(Cliente comprador)
         {
-            return $"Hola, me llamo {Nombre} {Apellido} soy tu ascesora.";
+            return $"Hola, me llamo {NombreCli2} {Apellido} soy tu ascesora.";
         }
         public string OfrecerProductos(Cliente comprador)
         {
-            return $"Gracias, {Nombre} {Apellido} en que le puedo ayudar?";
+            return $"Gracias, {Nombre} {Apellido} desea solo los productos que estan en caja o en que más le puedo ayudar?";
         }
-        public string PedirProducto(string nombreVendedor, string prodcutoSeleccionado)
-        {
-            return $"Discuple {nombreVendedor} la seccion de {prodcutoSeleccionado} ";
-        }
-        public string IndicarCelL()
-        {
-            return $"Un {Celular.Modelo} y su id es {Celular.Id}";
-        }
-       
         public string IndicarTablet()
         {
-            return $"Una {Tablet.Modelo} y su id es {Computadora.Id}";
+            return $"Una Tablet, Modelo: {Tablet.Modelo} y su id es {Computadora.Id}";
         }
         public string IndicarParlantes()
         {
-            return $"Una {Parlantes.Modelo} y su id es {Computadora.Id}";
+            return $"Un Parlante, Modelo: {Parlantes.Modelo} y su id es {Computadora.Id}";
         }
         public string IndicarImpresora()
         {
-            return $"Una {Impresora.Modelo} y su id es {Computadora.Id}";
+            return $"Una Impresora, Modelo: {Impresora.Modelo} y su id es {Computadora.Id}";
         }
         public string IndicarCamaras()
         {
-            return $"Una {Camaras.Modelo} y su id es {Computadora.Id}";
+            return $"Una Camara, Modelo: {Camaras.Modelo} y su id es {Computadora.Id}";
         }
         public string IndicarAudifonos()
         {
-            return $"Una {Audifonos.Modelo} y su id es {Computadora.Id}";
-        }
-        public string PagarProducto(decimal dinero, decimal ValorTotal)
-        {
-            var resta = dinero - ValorTotal;
-
-            return $"Pago Exitoso - Su cambio es : {resta}";
+            return $"Un Audifono, Modelo: {Audifonos.Modelo} y su id es {Computadora.Id}";
         }
 
-        internal string Pedir(string personaApedir, ProductosElectronicos electronicos)
+        public string Pedir(string Cliente, ProductosElectronicos productosElectronicos)
         {
-            throw new NotImplementedException();
+            return $"Si, Me interesa llevarme tambien estos productos pero quisiera probar la Computadora: {Computadora.Marca}, el Celular: {Celular.Modelo} y la Tablet:{Tablet.Marca}, por favor";
         }
     }
 }

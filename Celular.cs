@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace AplicacionDeber
@@ -8,16 +9,20 @@ namespace AplicacionDeber
     {
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public string Color { get; set; }
+        public virtual string Color { get; set; }
         public float Precio { get; set; }
+        public object NombreProducto { get; private set; }
 
+      
 
-
-
-        //Metodos
-        public new string Prender()
+       //Metodos estaticos, this y sobre carga de metodos
+        public override string Prender()
         {
-            return $"El celular {Id} {Marca} {Modelo} {base.Prender()}";
+            return $"El Celular {this.NombreProducto}, {this.Modelo}, {this.Marca} está {base.Prender()}";
+        }
+        public static string Prender(string nombre)
+        {
+            return $"El Celular está Prendido {nombre}";
         }
         public string Escribir()
         {
@@ -28,8 +33,6 @@ namespace AplicacionDeber
         {
             return "";
         }
-
-
         public string Colgar()
         {
             return "";
@@ -45,18 +48,19 @@ namespace AplicacionDeber
             return "";
         }
 
-        public string Eliminar()
-        {
-            return "";
-        }
+        public virtual string Eliminar { get; set; }
+       
 
         public Celular() : base()
         {
         }
-        public new string Apagar()
+        public override string Apagar()
         {
-            return $"El celular {Id} {Marca} {Modelo} está {base.Apagar()}";
-
+            return $"Gracias, El Celular {this.NombreProducto}, {this.Modelo}, {this.Marca} está {base.Apagar()}";
+        }
+        public static string Apagar(string nombre)
+        {
+            return $"Los audifonos estan apagados {nombre}";
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class GeneradorProductosTecnologicos
+    public abstract class GeneradorProductosTecnologicos
     {
         readonly Random random = new Random();
 
@@ -24,12 +24,12 @@ namespace AplicacionDeber
             Id = Convert.ToInt32(identificarCadena);
         }
 
-        public string Prender()
+        public virtual string Prender()
         {
             return "está prendido";
         }
 
-        public string Apagar()
+        public virtual string Apagar()
         {
             return "está apagado";
         }

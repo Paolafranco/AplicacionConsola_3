@@ -4,53 +4,62 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class Audifonos : GeneradorProductosTecnologicos
+    public sealed class Audifonos : GeneradorProductosTecnologicos
     {
 
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public float Precio { get; set; }
+        public object NombreProducto { get; private set; }
 
-       
-        public new string Prender()
+
+        //Metodos estaticos y sobre carga de metodos
+        public override string Prender()
         {
-            return $"Los audifonos {Id} {Marca} {Modelo} {base.Prender()}";
+            return $"{base.Prender()} {this.NombreProducto}{this.Modelo}{this.Marca}{base.Prender()}";
         }
-        //Metodos
+        public static string Prender(string nombre)
+        {
+            return $"Los audifonos estan prendidos {nombre}";
+        }
         public string Contestar()
         {
             return "";
         }
-        public string Escuchar()
+        public static string Escuchar()
         {
             return "";
         }
 
-        public string Hablar()
+        public static string Hablar()
         {
             return "";
         }
 
-        public string SubirVolumen()
+        public static string SubirVolumen()
         {
             return "";
         }
 
-        public string BajarVolumen()
+        public static string BajarVolumen()
         {
             return "";
         }
 
-        public string Colgar()
+        public static string Colgar()
         {
             return "";
         }
         public Audifonos() : base()
         {
         }
-        public new string Apagar()
+        public override string Apagar()
         {
-            return $"Los audifonos {Id} {Marca} {Modelo} {base.Apagar()}";
+            return $"{base.Apagar()} {this.NombreProducto}{this.Modelo}{this.Marca}{base.Apagar()}";
+        }
+        public static string Apagar(string nombre)
+        {
+            return $"Los audifonos estan apagados {nombre}";
         }
 
     }

@@ -4,17 +4,22 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class Tablet : GeneradorProductosTecnologicos
+    public sealed class Tablet : GeneradorProductosTecnologicos
     {
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public float Precio { get; set; }
+        public object NombreProducto { get; private set; }
 
 
-
-        public new string Prender()
+        //Metodos estaticos y sobre carga de metodos
+        public override string Prender()
         {
-            return $"La tablet {Id} {Marca} {Modelo} {base.Prender()}";
+            return $"La Tablet{this.NombreProducto}, {this.Modelo}, {this.Marca} está {base.Prender()}";
+        }
+        public static string Prender(string nombre)
+        {
+            return $"La Tablet está prendida {nombre}";
         }
         public string Escribir()
         {
@@ -52,10 +57,13 @@ namespace AplicacionDeber
         public Tablet() : base()
         {
         }
-        public new string Apagar()
+        public override string Apagar()
         {
-            return $"La tablet {Id} {Marca} {Modelo} {base.Apagar()}";
-
+            return $"Gracias, La Tablet{this.NombreProducto},{this.Modelo},{this.Marca} está {base.Apagar()}";
+        }
+        public static string Apagar(string nombre)
+        {
+            return $"La Tablet está apagados {nombre}";
         }
 
     }

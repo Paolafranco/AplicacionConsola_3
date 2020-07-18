@@ -4,11 +4,12 @@ using System.Text;
 
 namespace AplicacionDeber
 {
-    public class TarjetaDeMemoria : GeneradorProductosTecnologicos
+    public  class TarjetaDeMemoria : GeneradorProductosTecnologicos
     {
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public float Precio { get; set; }
+        public virtual string Memoria { get; set; }
 
 
         public TarjetaDeMemoria() : base()
